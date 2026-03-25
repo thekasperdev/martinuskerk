@@ -840,24 +840,25 @@ a:hover {
 }
 
 .help-card {
-  background: #fff;
-  border: 1px solid #e0ddd4;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.12);
   border-radius: 12px;
   padding: 2rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .help-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(201, 168, 76, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 .help-card__icon {
   width: 56px;
   height: 56px;
   margin: 0 auto 1.25rem;
-  color: var(--color-gold-dark);
+  color: var(--color-gold);
 }
 
 .help-card__icon svg {
@@ -869,14 +870,14 @@ a:hover {
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
   margin-bottom: 0.75rem;
 }
 
 .help-card p {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: var(--color-text-muted-dark);
+  color: var(--color-text-muted);
   margin-bottom: 1.25rem;
 }
 
@@ -930,13 +931,13 @@ a:hover {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 2px solid #e0ddd4;
+  border: 2px solid rgba(201, 168, 76, 0.2);
   background: transparent;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text-muted-dark);
+  color: var(--color-text-muted);
   transition: all 0.3s ease;
   padding: 0;
 }
@@ -948,8 +949,161 @@ a:hover {
 
 .share-btn:hover {
   border-color: var(--color-gold);
-  color: var(--color-gold-dark);
+  color: var(--color-gold);
   transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════
+   STICHTING (Section 6)
+   ═══════════════════════════════════════════ */
+
+.stichting-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.stichting-main p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+}
+
+.stichting-main strong {
+  color: var(--color-gold);
+}
+
+.stichting-name {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.stichting-name__icon {
+  font-size: 1.8rem;
+  color: var(--color-gold);
+}
+
+.stichting-name h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.stichting-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--color-gold-dark);
+  margin: 2rem 0;
+  opacity: 0.5;
+}
+
+.stichting-subtitle {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-light);
+}
+
+.stichting-values {
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  position: sticky;
+  top: calc(var(--nav-height) + 2rem);
+}
+
+.stichting-values__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.stichting-values__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stichting-values__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.stichting-values__icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 0.1rem;
+}
+
+.stichting-values__list strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.15rem;
+}
+
+.stichting-values__list p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Fundraiser on light section */
+.section--light .fundraiser__goal-label {
+  color: var(--color-text-muted-dark);
+}
+
+.section--light .fundraiser__goal-amount {
+  color: var(--color-gold-dark);
+}
+
+.section--light .progress-bar__track {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.section--light .progress-bar__labels {
+  color: var(--color-text-muted-dark);
+}
+
+.section--light .progress-bar__current {
+  color: var(--color-gold-dark);
+}
+
+.section--light .budget-card {
+  background: #fff;
+  border-color: #e0ddd4;
+}
+
+.section--light .budget-card__title {
+  color: var(--color-gold-dark);
+}
+
+.section--light .budget-card p {
+  color: var(--color-text-muted-dark);
+}
+
+@media (max-width: 900px) {
+  .stichting-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stichting-values {
+    position: static;
+  }
 }
 
 /* ═══════════════════════════════════════════
